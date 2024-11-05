@@ -22,7 +22,21 @@
 		C08184D72CD89B8C0054A352 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184D62CD89B8C0054A352 /* DeleteButton.swift */; };
 		C08184D92CD8E3AC0054A352 /* Quakes+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184D82CD8E3AC0054A352 /* Quakes+Toolbar.swift */; };
 		C08184DB2CD8E6D00054A352 /* QuakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184DA2CD8E6D00054A352 /* QuakeError.swift */; };
+		C08184EA2CD8EA520054A352 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184E92CD8EA520054A352 /* TestData.swift */; };
+		C08184EC2CD8EAED0054A352 /* EarthquakesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184EB2CD8EAED0054A352 /* EarthquakesTests.swift */; };
+		C08184EE2CD8F20C0054A352 /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184ED2CD8F20C0054A352 /* GeoJSON.swift */; };
+		C08184F02CD8F6D30054A352 /* QuakeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184EF2CD8F6D30054A352 /* QuakeLocation.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C08184E42CD8E9EC0054A352 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05C6E532CD86F1F0018604F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C05C6E5A2CD86F1F0018604F;
+			remoteInfo = EarthQuake;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C05C6E5B2CD86F1F0018604F /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +55,22 @@
 		C08184D62CD89B8C0054A352 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		C08184D82CD8E3AC0054A352 /* Quakes+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quakes+Toolbar.swift"; sourceTree = "<group>"; };
 		C08184DA2CD8E6D00054A352 /* QuakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeError.swift; sourceTree = "<group>"; };
+		C08184E02CD8E9EC0054A352 /* EarthQuakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthQuakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08184E92CD8EA520054A352 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		C08184EB2CD8EAED0054A352 /* EarthquakesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesTests.swift; sourceTree = "<group>"; };
+		C08184ED2CD8F20C0054A352 /* GeoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
+		C08184EF2CD8F6D30054A352 /* QuakeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C05C6E582CD86F1F0018604F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08184DD2CD8E9EC0054A352 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C05C6E5D2CD86F1F0018604F /* EarthQuake */,
+				C08184E12CD8E9EC0054A352 /* EarthQuakeTests */,
 				C05C6E5C2CD86F1F0018604F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C05C6E5B2CD86F1F0018604F /* EarthQuake.app */,
+				C08184E02CD8E9EC0054A352 /* EarthQuakeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				C05C6E712CD876800018604F /* Quake.swift */,
+				C08184ED2CD8F20C0054A352 /* GeoJSON.swift */,
+				C08184EF2CD8F6D30054A352 /* QuakeLocation.swift */,
 				C05C6E732CD876CA0018604F /* Quake+Color.swift */,
 				C08184DA2CD8E6D00054A352 /* QuakeError.swift */,
 			);
@@ -132,6 +162,15 @@
 			path = ToolbarContent;
 			sourceTree = "<group>";
 		};
+		C08184E12CD8E9EC0054A352 /* EarthQuakeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C08184E92CD8EA520054A352 /* TestData.swift */,
+				C08184EB2CD8EAED0054A352 /* EarthquakesTests.swift */,
+			);
+			path = EarthQuakeTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +191,24 @@
 			productReference = C05C6E5B2CD86F1F0018604F /* EarthQuake.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C08184DF2CD8E9EC0054A352 /* EarthQuakeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C08184E62CD8E9EC0054A352 /* Build configuration list for PBXNativeTarget "EarthQuakeTests" */;
+			buildPhases = (
+				C08184DC2CD8E9EC0054A352 /* Sources */,
+				C08184DD2CD8E9EC0054A352 /* Frameworks */,
+				C08184DE2CD8E9EC0054A352 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C08184E52CD8E9EC0054A352 /* PBXTargetDependency */,
+			);
+			name = EarthQuakeTests;
+			productName = EarthQuakeTests;
+			productReference = C08184E02CD8E9EC0054A352 /* EarthQuakeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,6 +221,11 @@
 				TargetAttributes = {
 					C05C6E5A2CD86F1F0018604F = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					C08184DF2CD8E9EC0054A352 = {
+						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
+						TestTargetID = C05C6E5A2CD86F1F0018604F;
 					};
 				};
 			};
@@ -181,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				C05C6E5A2CD86F1F0018604F /* EarthQuake */,
+				C08184DF2CD8E9EC0054A352 /* EarthQuakeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +258,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C08184DE2CD8E9EC0054A352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -205,6 +275,7 @@
 				C05C6E782CD878AA0018604F /* QuakeMagnitude.swift in Sources */,
 				C05C6E5F2CD86F1F0018604F /* EarthQuakeApp.swift in Sources */,
 				C05C6E742CD876CA0018604F /* Quake+Color.swift in Sources */,
+				C08184EE2CD8F20C0054A352 /* GeoJSON.swift in Sources */,
 				C08184D72CD89B8C0054A352 /* DeleteButton.swift in Sources */,
 				C05C6E762CD878990018604F /* QuakeRow.swift in Sources */,
 				C05C6E722CD876800018604F /* Quake.swift in Sources */,
@@ -212,13 +283,31 @@
 				C05C6E7B2CD887070018604F /* SelectButton.swift in Sources */,
 				C05C6E7F2CD8919D0018604F /* RefreshButton.swift in Sources */,
 				C08184DB2CD8E6D00054A352 /* QuakeError.swift in Sources */,
+				C08184F02CD8F6D30054A352 /* QuakeLocation.swift in Sources */,
 				C05C6E702CD875DC0018604F /* Quakes.swift in Sources */,
 				C05C6E812CD892A20018604F /* ToolbarStatus.swift in Sources */,
 				C08184D92CD8E3AC0054A352 /* Quakes+Toolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C08184DC2CD8E9EC0054A352 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08184EC2CD8EAED0054A352 /* EarthquakesTests.swift in Sources */,
+				C08184EA2CD8EA520054A352 /* TestData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C08184E52CD8E9EC0054A352 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C05C6E5A2CD86F1F0018604F /* EarthQuake */;
+			targetProxy = C08184E42CD8E9EC0054A352 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C05C6E672CD86F210018604F /* Debug */ = {
@@ -398,6 +487,45 @@
 			};
 			name = Release;
 		};
+		C08184E72CD8E9EC0054A352 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T6VTX7NFQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftUI.EarthQuakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EarthQuake.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EarthQuake";
+			};
+			name = Debug;
+		};
+		C08184E82CD8E9EC0054A352 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T6VTX7NFQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftUI.EarthQuakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EarthQuake.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EarthQuake";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,6 +543,15 @@
 			buildConfigurations = (
 				C05C6E6A2CD86F210018604F /* Debug */,
 				C05C6E6B2CD86F210018604F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C08184E62CD8E9EC0054A352 /* Build configuration list for PBXNativeTarget "EarthQuakeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C08184E72CD8E9EC0054A352 /* Debug */,
+				C08184E82CD8E9EC0054A352 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
