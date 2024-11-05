@@ -10,19 +10,25 @@ import SwiftUI
 
 struct Quakes: View {
     
-    @State var quakes = staticData
+    @AppStorage("lastUpdated") var lastUpdated = Date.distantFuture.timeIntervalSince1970
+    
+    @EnvironmentObject var provider: QuakesProvider
+    
     @State var isLoading = false
     @State var editMode: EditMode = .inactive
     @State var selectMode: SelectMode = .inactive
     @State var selection: Set<String> = []
     
-    @AppStorage("lastUpdated") var lastUpdated = Date.distantFuture.timeIntervalSince1970
+    @State private var error: QuakeError?
+    @State private var hasError = false
+    
+
 
     
     var body: some View {
         NavigationStack{
             List(selection: $selection) {
-                ForEach(quakes) { quake in
+                ForEach(provider.quakes) { quake in
                     QuakeRow(quake: quake)
                 }
                 .onDelete(perform: deleteQuakes)
@@ -30,18 +36,23 @@ struct Quakes: View {
             }
             .listStyle(.inset)
             .navigationTitle("EarthQuake")
-            .refreshable {
-                fetchQuakes()
-            }
-            
             .toolbar(content: toolbarContent)
+            .refreshable {
+                await fetchQuakes()
+            }
+            .alert(isPresented: $hasError, error: error) {}
             .environment(\.editMode, $editMode)
+        }
+        .task {
+            await fetchQuakes()
         }
     }
 }
 
 #Preview {
     Quakes()
+        .environmentObject(
+            QuakesProvider(client: QuakeClient(downloader: TestDownloader())))
 }
 
 
@@ -62,20 +73,27 @@ let staticData: [Quake] = [
 //MARK: -
 extension Quakes{
     
-    func fetchQuakes(){
+    func fetchQuakes() async {
         isLoading = true
-        self.quakes = staticData
-        lastUpdated = Date().timeIntervalSince1970
+        do{
+            try await provider.fetchQuakes()
+            lastUpdated = Date().timeIntervalSince1970
+
+        }catch{
+            self.error = error as? QuakeError ?? .unexpectedError(error: error)
+            self.hasError = true
+        }
+            
         isLoading = false
     }
     
     func deleteQuakes(at offset: IndexSet){
-        quakes.remove(atOffsets: offset)
+        provider.deleteQuakes(atOffsets: offset)
     }
     
     func deleteQuakes(for codes: Set<String>){
         var offsetsToDelete: IndexSet = []
-        for (index, element) in quakes.enumerated(){
+        for (index, element) in provider.quakes.enumerated(){
             if codes.contains(element.code){
                 offsetsToDelete.insert(index)
             }
