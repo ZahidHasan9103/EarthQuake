@@ -30,6 +30,10 @@
 		C08184F52CDA07B60054A352 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184E92CD8EA520054A352 /* TestData.swift */; };
 		C08184F72CDA08210054A352 /* TestDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184F62CDA08200054A352 /* TestDownloader.swift */; };
 		C08184F92CDA0D580054A352 /* QuakesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184F82CDA0D580054A352 /* QuakesProvider.swift */; };
+		C08184FD2CDA28B90054A352 /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184FC2CDA28B90054A352 /* CacheEntry.swift */; };
+		C08184FF2CDA2A670054A352 /* NSCache+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08184FE2CDA2A670054A352 /* NSCache+Subscript.swift */; };
+		C08185012CDB77210054A352 /* Quake+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08185002CDB77210054A352 /* Quake+Preview.swift */; };
+		C08185032CDB77630054A352 /* QuakeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08185022CDB77630054A352 /* QuakeDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		C08184F32CDA06120054A352 /* QuakeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeClient.swift; sourceTree = "<group>"; };
 		C08184F62CDA08200054A352 /* TestDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDownloader.swift; sourceTree = "<group>"; };
 		C08184F82CDA0D580054A352 /* QuakesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakesProvider.swift; sourceTree = "<group>"; };
+		C08184FC2CDA28B90054A352 /* CacheEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntry.swift; sourceTree = "<group>"; };
+		C08184FE2CDA2A670054A352 /* NSCache+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCache+Subscript.swift"; sourceTree = "<group>"; };
+		C08185002CDB77210054A352 /* Quake+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quake+Preview.swift"; sourceTree = "<group>"; };
+		C08185022CDB77630054A352 /* QuakeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 				C05C6E652CD86F210018604F /* Preview Assets.xcassets */,
 				C08184E92CD8EA520054A352 /* TestData.swift */,
 				C08184F62CDA08200054A352 /* TestDownloader.swift */,
+				C08185002CDB77210054A352 /* Quake+Preview.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -139,6 +148,8 @@
 				C08184F12CDA04260054A352 /* HTTPDataDownloader.swift */,
 				C08184F32CDA06120054A352 /* QuakeClient.swift */,
 				C08184F82CDA0D580054A352 /* QuakesProvider.swift */,
+				C08184FC2CDA28B90054A352 /* CacheEntry.swift */,
+				C08184FE2CDA2A670054A352 /* NSCache+Subscript.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 				C05C6E6F2CD875DC0018604F /* Quakes.swift */,
 				C05C6E752CD878990018604F /* QuakeRow.swift */,
 				C05C6E772CD878AA0018604F /* QuakeMagnitude.swift */,
+				C08185022CDB77630054A352 /* QuakeDetail.swift */,
 				C05C6E792CD886E90018604F /* ToolbarContent */,
 			);
 			path = Views;
@@ -286,6 +298,7 @@
 			files = (
 				C05C6E782CD878AA0018604F /* QuakeMagnitude.swift in Sources */,
 				C05C6E5F2CD86F1F0018604F /* EarthQuakeApp.swift in Sources */,
+				C08184FD2CDA28B90054A352 /* CacheEntry.swift in Sources */,
 				C05C6E742CD876CA0018604F /* Quake+Color.swift in Sources */,
 				C08184EE2CD8F20C0054A352 /* GeoJSON.swift in Sources */,
 				C08184D72CD89B8C0054A352 /* DeleteButton.swift in Sources */,
@@ -298,12 +311,15 @@
 				C05C6E7F2CD8919D0018604F /* RefreshButton.swift in Sources */,
 				C08184DB2CD8E6D00054A352 /* QuakeError.swift in Sources */,
 				C08184F02CD8F6D30054A352 /* QuakeLocation.swift in Sources */,
+				C08185012CDB77210054A352 /* Quake+Preview.swift in Sources */,
 				C08184F22CDA04260054A352 /* HTTPDataDownloader.swift in Sources */,
 				C05C6E702CD875DC0018604F /* Quakes.swift in Sources */,
 				C08184F42CDA06120054A352 /* QuakeClient.swift in Sources */,
 				C05C6E812CD892A20018604F /* ToolbarStatus.swift in Sources */,
 				C08184F72CDA08210054A352 /* TestDownloader.swift in Sources */,
 				C08184D92CD8E3AC0054A352 /* Quakes+Toolbar.swift in Sources */,
+				C08185032CDB77630054A352 /* QuakeDetail.swift in Sources */,
+				C08184FF2CDA2A670054A352 /* NSCache+Subscript.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EarthQuake/Preview Content\"";
-				DEVELOPMENT_TEAM = 9T6VTX7NFQ;
+				DEVELOPMENT_TEAM = CMBMQ6HXST;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -466,7 +482,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftUI.EarthQuake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftUI.EarthQuakes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -482,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EarthQuake/Preview Content\"";
-				DEVELOPMENT_TEAM = 9T6VTX7NFQ;
+				DEVELOPMENT_TEAM = CMBMQ6HXST;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -495,7 +511,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftUI.EarthQuake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftUI.EarthQuakes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

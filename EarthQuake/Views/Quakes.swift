@@ -22,17 +22,16 @@ struct Quakes: View {
     @State private var error: QuakeError?
     @State private var hasError = false
     
-
-
     
     var body: some View {
         NavigationStack{
             List(selection: $selection) {
                 ForEach(provider.quakes) { quake in
-                    QuakeRow(quake: quake)
+                    NavigationLink(destination: QuakeDetail(selection: selection, quake: quake)){
+                        QuakeRow(quake: quake)
+                    }
                 }
                 .onDelete(perform: deleteQuakes)
-                
             }
             .listStyle(.inset)
             .navigationTitle("EarthQuake")
@@ -41,6 +40,9 @@ struct Quakes: View {
                 await fetchQuakes()
             }
             .alert(isPresented: $hasError, error: error) {}
+            .onAppear{
+                selection.removeAll()
+            }
             .environment(\.editMode, $editMode)
         }
         .task {
@@ -72,6 +74,14 @@ let staticData: [Quake] = [
 
 //MARK: -
 extension Quakes{
+    
+    var title: String{
+        if selectMode.isActive || selection.isEmpty{
+            return "Earthquakes"
+        }else{
+            return "\(selection.count) Selected"
+        }
+    }
     
     func fetchQuakes() async {
         isLoading = true

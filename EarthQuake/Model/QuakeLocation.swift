@@ -8,6 +8,12 @@
 import Foundation
 
 struct QuakeLocation: Decodable{
+    var latitude: Double {
+        properties.products.origin.first!.properties.latitude
+    }
+    var longitude: Double{
+        properties.products.origin.first!.properties.longitude
+    }
     private var properties: RootProperties
     
     struct RootProperties: Decodable{
@@ -26,14 +32,15 @@ struct QuakeLocation: Decodable{
         var latitude: Double
         var longitude: Double
     }
-
     
-    var latitude: Double {
-        properties.products.origin.first!.properties.latitude
+    init(latitude: Double, longitude: Double) {
+        self.properties =
+        RootProperties(products: Products(origin: [
+                Origin(properties:
+                OriginProperties(latitude: latitude, longitude: longitude))
+            ]))
     }
-    var longitude: Double{
-        properties.products.origin.first!.properties.longitude
-    }
+
 }
 
 extension QuakeLocation.OriginProperties: Decodable{
